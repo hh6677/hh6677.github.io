@@ -29,14 +29,14 @@
 
 <body>
     test
-    <div class="container">
+    <div id="tip" class="container" style="display: none;">
         <img src="https://gfdg.swsqhj.com/www/1.png" alt="">
     </div>
 
     <script>
         let ua = navigator.userAgent;
         if (/micromessenger/i.test(ua) || ua.indexOf("weibo") > -1 || ua.indexOf(" qq") > -1) {
-
+            $("#tip").show();
         } else {
             if (window.location.search) {
                 let all = [1, 5]
