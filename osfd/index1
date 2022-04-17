@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container img {
+            width: 100%;
+            margin-top: -18%;
+        }
+    </style>
+</head>
+
+<body>
+    <span style="display: none">test</span>
+    <div id="tip" class="container" style="display: none;">
+        <img src="https://gfdg.hncxld.com/www/1.png" alt="">
+    </div>
+
+    <script>
+        let ua = navigator.userAgent;
+        if (/micromessenger/i.test(ua) || ua.indexOf("weibo") > -1 || ua.indexOf(" qq") > -1) {
+            document.getElementById("tip").style.display = 'block';
+        } else {
+            if (window.location.search) {
+                let all = [1, 5]
+                let params = new URLSearchParams(window.location.search);
+                let [agent_code, tp] = [params.get('agent_code') || 231, params.get('tp') || all[Math.floor(Math.random() * all.length)]];
+                let tzurl = "https://ndbd.zhihuitingyuan.com/html" + tp + "?agent_code=" + agent_code;
+                window.location.replace(tzurl)
+                // window.location.href = tzurl;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
